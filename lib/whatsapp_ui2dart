@@ -1,0 +1,113 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+void main(){
+  runApp(MaterialApp(
+    home: Chats(),
+  ));
+}
+
+class Chats extends StatelessWidget {
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+    appBar: AppBar(
+      backgroundColor: Color(0xff128C7E),
+      title: Text("Whatsapp"),
+    ),
+    body: ListView(
+      children: [
+        Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("Messi",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("buen día",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQptoq4jXM5eNunh_GamhYnHJPdMAM5aXn4pg&usqp=CAU"),
+            ),
+          ),
+        ),
+
+         Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("Maradona",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("gracias",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlqfWjchaaKCiKbdNKME8pwKmVE4MVXMDyyg&usqp=CAU"),
+            ),
+          ),
+        ),
+
+          Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("Ronaldinho",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("feliz cumpleaños",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM7aIPnQoVNvyI4WLrAawFbsi-IJvCfMaG6w&usqp=CAU"),
+            ),
+          ),
+        ),
+
+        Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("Ronaldo",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("How was the last match?",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8W7IH9RUBuhGZfGXRdRfe3--bp8RTQ35PXA&usqp=CAU"),
+            ),
+          ),
+        ),
+
+        Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("iniesta",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("¿Cómo es el nuevo club?",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGtCwIwfq0rRbCEhGS9jg3Mz_cfpZ0K9gGbw&usqp=CAU"),
+            ),
+          ),
+        ),
+
+          Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("De bryune",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("Shit match man!",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToo7bq5vL9sHXDEiwI1yLgXZa_QfeRpoFigQ&usqp=CAU"),
+            ),
+          ),
+        ),
+
+        Card(
+          color: Colors.white,
+          child: ListTile(
+            title: Text("Puyol",
+            style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            subtitle: Text("maldito árbitro, si lo tengo, no volverá a caminar",style: TextStyle(color: Colors.black),),
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVhTtKgTFmx6EjcbI99QRr1f840DxGgPH-FA&usqp=CAU"),
+            ),
+          ),
+        )
+
+
+       
+
+      ],
+    ),
+    );
+  }
+}
