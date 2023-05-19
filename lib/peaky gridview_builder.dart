@@ -45,32 +45,33 @@ class List_custom extends StatelessWidget {
             crossAxisSpacing: 5,
             mainAxisExtent: 200),
         itemBuilder: (context, index) => Card(
-          child: Stack(
-            children: [
-              Container(child: Text("hello"),),
-              Container(
-                width: double.infinity,
-                height: 250,
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                      image: NetworkImage(
-                        image[index],
-                      ),
-                      fit: BoxFit.fill),
+          child: Container(
+            child: Stack(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 250,
+                  margin: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                        image: NetworkImage(
+                          image[index],
+                        ),
+                        fit: BoxFit.fill),
+                  ),
                 ),
-              ),
-              Positioned(
-                  left: 15,
-                  right: 50,
-                  bottom: 10,
-                  
-                  child: Text(
-                    name[index],
-                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
-                  ))
-            ],
+                Positioned(
+                    left: 15,
+                    right: 50,
+                    bottom: 10,
+                    
+                    child: Text(
+                      name[index],
+                      style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
+                    ))
+              ],
+            ),
           ),
         ),
         itemCount: 5,
