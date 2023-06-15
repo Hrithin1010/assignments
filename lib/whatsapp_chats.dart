@@ -1,4 +1,4 @@
-import 'package:assignments/whatsapp_ui.dart';
+import 'package:assignments/whatsapp_chats.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -7,13 +7,14 @@ void main(){
   runApp(MaterialApp(
     home: Chats(),
   debugShowCheckedModeBanner: false,));
+  
 }
 
 class Chats extends StatelessWidget {
 
   var name = ["Messi","Maradona","Ronaldinho","Ronaldo","Iniesta","De bryune","Puyol","Sahal","xavi","Dejong","Otamendi","Marcherano"];
   var messages = ["buen día","gracias","feliz cumpleaños","How was the last match?","¿Cómo es el nuevo club?","Shit match man!","maldito árbitro, si lo tengo, no volverá a caminar","buen día","gracias","maldito árbitro, si lo tengo, no volverá a caminar","How was the last match?"];
-  var photos =["assets/messi.jpg","assets/maradona.jpg","assets/ronaldinho.jpg","assets/ronaldo.jpg","assets/iniesta.jpg","assets/debryune.jpg",
+  var images=["assets/messi.jpg","assets/maradona.jpg","assets/ronaldinho.jpg","assets/ronaldo.jpg","assets/iniesta.jpg","assets/debryune.jpg",
   "assets/puyol.jpg","assets/sahal.jpg","assets/xavi.jpg","assets/dejong.jpg","assets/otamendi.jpg","assets/marcherano.jpg"
   ];
   var time =["2:34","5:45","2:34","1:45","10:23","1:45","12:00","12:34","1:56","4:00","7:12","8:23"];
@@ -22,7 +23,7 @@ class Chats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: 5,
+    return DefaultTabController(length: 4,
      child: Scaffold(
       
       floatingActionButton: FloatingActionButton(onPressed: (){}, 
@@ -43,8 +44,8 @@ class Chats extends StatelessWidget {
         })
        ],
        bottom: TabBar(tabs: [
+        Icon(Icons.people_rounded),
         Text("Chats"),
-         Icon(Icons.camera_alt),
         Text("Status"),
         Text("Calls"),
        ]),
@@ -65,7 +66,8 @@ class Chats extends StatelessWidget {
                 child: ListTile(
                   title:Text(name[index]),
                   leading: CircleAvatar(
-                    backgroundImage: NetworkImage(photos[index]),),
+                    backgroundImage: AssetImage(images[index]),
+                    ),
                       subtitle: Text(messages[index]),
                       trailing: Text(time[index]),
                   ),
