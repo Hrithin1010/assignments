@@ -22,9 +22,7 @@ class musicUI2 extends StatelessWidget {
     "https://images.unsplash.com/photo-1474692295473-66ba4d54e0d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c25hcCUyMHNvbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
     "https://images.unsplash.com/photo-1518887572120-cae9ec0daab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hcCUyMHNvbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
     "https://images.unsplash.com/photo-1518911710364-17ec553bde5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c25hcCUyMHNvbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
-    //"https://www.rollingstone.com/wp-content/uploads/2020/01/the-weeknd-video.jpg?w=1600&h=900&crop=1",
     "https://images.unsplash.com/photo-1667752949527-6cdac036b59c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNvbmclMjBwbGF5bGlzdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
-    //"https://www.billboard.com/wp-content/uploads/media/wiz-khalifa-see-you-again-vid-billboard-1548.jpg?w=1024",
   ];
 
   List singerName = [
@@ -158,42 +156,41 @@ class musicUI2 extends StatelessWidget {
                               ))),
                     ),
                   ),
-
                 ),
               ),
             ],
           ),
         ),
       ),
-       bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          selectedItemColor: Colors.white,
-          items: [
-            BottomNavigationBarItem(
-                 icon: Icon(Icons.home),
-                label: "Home",
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: "",
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-              backgroundColor: Colors.black,
-              label: " ",
-              icon: Icon(Icons.save_alt),
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.menu),
-                backgroundColor: Colors.black,
-                label: ""),
-          ],
-          selectedIconTheme: IconThemeData(color: Color.fromARGB(255, 181, 94, 123) ),
-          unselectedItemColor: Colors.white,
-          showUnselectedLabels: true,
-          selectedLabelStyle:
-              TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 181, 94, 123)),
-          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.white,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+              backgroundColor: Colors.black),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "",
+              backgroundColor: Colors.black),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.black,
+            label: " ",
+            icon: Icon(Icons.save_alt),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.menu), backgroundColor: Colors.black, label: ""),
+        ],
+        selectedIconTheme:
+            IconThemeData(color: Color.fromARGB(255, 181, 94, 123)),
+        unselectedItemColor: Colors.white,
+        showUnselectedLabels: true,
+        selectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 181, 94, 123)),
+        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
+      ),
     );
   }
 }

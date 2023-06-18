@@ -18,6 +18,16 @@ class Framersfresh extends StatelessWidget {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCQtSA2KGPIuudCmPPG6ySwb7WCgWc7kT_xw&usqp=CAU",
   ];
   List items = ["Vegetables", "Fruits", "Exotic"];
+  List imagescount = [
+    "https://images.unsplash.com/photo-1584526896127-c5cfc9e434e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2Fycm90fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+    "https://images.unsplash.com/photo-1583663848850-46af132dc08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJvY29saXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+    "https://plus.unsplash.com/premium_photo-1664372599369-dd9f4ee07254?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cG90YXRvfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    "https://images.unsplash.com/photo-1561136594-7f68413baa99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG9tYXRvfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b25pb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+  ];
+
+  List namecount = ["Carrot", "Banana", "Brocoli", "Potato", "Tomato", "Onion"];
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +103,7 @@ class Framersfresh extends StatelessWidget {
                   child: cardsx(),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 6, top: 1),
+                  padding: const EdgeInsets.only(left: 9, top: 9),
                   child: Row(
                     children: [
                       Text(
@@ -112,7 +122,7 @@ class Framersfresh extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     width: 300,
-                    height: 200,
+                    height: 165,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(
@@ -120,7 +130,42 @@ class Framersfresh extends StatelessWidget {
                           fit: BoxFit.cover),
                     ),
                   ),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 9, top: 9),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Best selling products",
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 2,
+                    mainAxisSpacing: 2,
+                    shrinkWrap: true,
+                    
+                    children: List.generate(
+                        6,
+                        (index) => Container(
+                          color: Colors.grey,
+                          height: 200,
+                          width: 100,
+                          child: Column(children: [
+                                Image(image:NetworkImage(imagescount[index]),height: 200,width: double.infinity,),
+                              ]),
+                        )),
+                  ),
+                ),
               ],
             ),
           ),
