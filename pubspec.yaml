@@ -33,6 +33,9 @@ dependencies:
   carousel_slider: ^4.2.1
   google_fonts: ^5.0.0
   dynamic_fa_icons: ^1.1.0+2
+  font_awesome_flutter: ^10.4.0
+  lottie: ^2.3.2
+  sqflite: ^2.2.8+4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -78,6 +81,7 @@ flutter:
     - assets/marcherano.jpg
     - assets/download2.png
     - assets/png-clipart-india-map-illustration-agra-delhi-package-tour-travel-agent-tamilnadu-text-logo.png
+    - assets\Animation\75705-welcome-animation.json
 
      
 

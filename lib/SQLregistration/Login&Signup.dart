@@ -1,16 +1,18 @@
-import 'package:assignments/loginassg2.dart';
-import 'package:assignments/signupassg2.dart';
+import 'package:assignments/SQLregistration/Login.dart';
+import 'package:assignments/SQLregistration/signup.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// import 'package:flutter/src/widgets/placeholder.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomePage(),
+    debugShowCheckedModeBanner: false,
+    home: LoginSign(),
   ));
 }
 
-class HomePage extends StatelessWidget {
+class LoginSign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +56,10 @@ class HomePage extends StatelessWidget {
               Column(
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => loginSQL()));
+                    },
                     child: Text(
                       "Login",
                     ),
@@ -68,7 +73,10 @@ class HomePage extends StatelessWidget {
                     height: 20,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => SignupSQL()));
+                    },
                     child: Text("Sign up"),
                     style: ElevatedButton.styleFrom(
                         minimumSize: Size(300, 50),
