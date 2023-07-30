@@ -1,3 +1,5 @@
+import 'package:assignments/Musicui/Settings.dart';
+import 'package:assignments/Musicui/musicUI2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,6 +10,13 @@ void main() {
 }
 
 class musicui1 extends StatelessWidget {
+
+
+
+
+
+
+
   List images = [
     "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG11c2ljc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
     "https://preview.redd.it/izavjno6ipy51.jpg?auto=webp&s=e8480b53eb23f3ac90a9cdf738607d1634e954cf",
@@ -38,7 +47,7 @@ class musicui1 extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 27,
                               fontWeight: FontWeight.bold,
-                              color: Colors.purple[200]),
+                              color: Color.fromARGB(255, 170, 11, 144)),
                         ),
                       )
                     ],
@@ -54,11 +63,11 @@ class musicui1 extends StatelessWidget {
                               fillColor: const Color.fromARGB(255, 0, 0, 0),
                               hintText: 'Search...',
                               hintStyle: TextStyle(
-                                color: Colors.purple[100],
+                                color: Color.fromARGB(255, 170, 11, 144),
                               ),
                               suffixIcon: Icon(
                                 Icons.search,
-                                color: Colors.purple[100],
+                                color: Color.fromARGB(255, 170, 11, 144),
                               )),
                         ),
                       )),
@@ -91,29 +100,33 @@ class musicui1 extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.shifting,
           selectedItemColor: Colors.white,
+        
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "",
+                icon: IconButton(onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>musicUI2()));
+                }, icon: Icon(Icons.home)),
+                label: "Home",
                 backgroundColor: Colors.black),
             BottomNavigationBarItem(
                 icon: Icon(Icons.search),
-                label: "",
+                label: "Search",
                 backgroundColor: Colors.black),
             BottomNavigationBarItem(
+              
               backgroundColor: Colors.black,
-              label: "Playlists",
-              icon: Icon(Icons.add_rounded),
+              label: "Library",
+              icon: Icon(Icons.library_add),
             ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.apps_outlined),
-                backgroundColor: Colors.black,
-                label: ""),
+            // BottomNavigationBarItem( icon: IconButton(onPressed: (){
+            //   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>settings()));
+            // }, icon:Icon(Icons.settings),),
+            //    backgroundColor: Colors.black, label: "Settings"),
           ],
           unselectedItemColor: Colors.white,
           showUnselectedLabels: true,
           selectedLabelStyle:
-              TextStyle(fontWeight: FontWeight.bold, color: Colors.purple[200]),
+              TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 170, 11, 144)),
           unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
         ),
       ),

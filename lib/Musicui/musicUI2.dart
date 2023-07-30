@@ -1,3 +1,6 @@
+import 'package:assignments/Musicui/Search.dart';
+import 'package:assignments/Musicui/Settings.dart';
+import 'package:assignments/Musicui/musicUI1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,7 +10,22 @@ void main() {
   ));
 }
 
-class musicUI2 extends StatelessWidget {
+class musicUI2 extends StatefulWidget {
+  @override
+  State<musicUI2> createState() => _musicUI2State();
+}
+
+class _musicUI2State extends State<musicUI2> {
+  int _currentSelectedIndex = 0;
+
+  final _pages=[
+    musifysearch(),
+    musicui1(),
+    settings()
+
+
+  ];
+
   List images = [
     "https://preview.redd.it/izavjno6ipy51.jpg?auto=webp&s=e8480b53eb23f3ac90a9cdf738607d1634e954cf",
     "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG11c2ljc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
@@ -46,6 +64,7 @@ class musicUI2 extends StatelessWidget {
     "jhvad",
     "hgad"
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +79,7 @@ class musicUI2 extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 181, 94, 123)),
+                      color: Color.fromARGB(255, 170, 11, 144)),
                 ),
               ),
               Padding(
@@ -72,7 +91,7 @@ class musicUI2 extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 181, 94, 123)),
+                          color: Color.fromARGB(255, 170, 11, 144)),
                     )),
               ),
               SingleChildScrollView(
@@ -103,7 +122,7 @@ class musicUI2 extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 181, 94, 123)),
+                          color: Color.fromARGB(255, 170, 11, 144)),
                     )),
               ),
               Padding(
@@ -135,22 +154,27 @@ class musicUI2 extends StatelessWidget {
                               title: Text(
                                 musicName[index],
                                 style: TextStyle(
-                                    color: Color.fromARGB(255, 181, 94, 123)),
+                                  color: Colors.white,
+                                ),
                               ),
                               subtitle: Text(
                                 singerName[index],
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 170, 11, 144),
+                                    fontSize: 12),
                               ),
                               trailing: Wrap(
                                 children: [
-                                  Icon(Icons.star_border_outlined,
-                                      color: Color.fromARGB(255, 181, 94, 123)),
+                                  Icon(
+                                    Icons.star_border_outlined,
+                                    color: Colors.white,
+                                  ),
                                   SizedBox(
                                     width: 11.0,
                                   ),
                                   Icon(
                                     Icons.download_sharp,
-                                    color: Color.fromARGB(255, 181, 94, 123),
+                                    color: Colors.white,
                                   )
                                 ],
                               ))),
@@ -165,25 +189,48 @@ class musicUI2 extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
         selectedItemColor: Colors.white,
+        currentIndex: _currentSelectedIndex,
+        onTap: (newIndex) {
+          _currentSelectedIndex = newIndex;
+        },
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "Home",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "",
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => musifysearch()));
+                  },
+                  icon: Icon(Icons.search)),
+              label: "Search",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
             backgroundColor: Colors.black,
-            label: " ",
-            icon: Icon(Icons.save_alt),
+            label: "Playlists",
+            icon: IconButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => musicui1()));
+              },
+              icon: Icon(Icons.queue_music),
+            ),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.menu), backgroundColor: Colors.black, label: ""),
+              icon: IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => settings()));
+                },
+                icon: Icon(Icons.settings),
+              ),
+              backgroundColor: Colors.black,
+              label: "Settings"),
         ],
         selectedIconTheme:
-            IconThemeData(color: Color.fromARGB(255, 181, 94, 123)),
+            IconThemeData(color: Color.fromARGB(255, 170, 11, 144)),
         unselectedItemColor: Colors.white,
         showUnselectedLabels: true,
         selectedLabelStyle: TextStyle(
